@@ -10,7 +10,7 @@ public class Ejercicio6_Hoja6 {
 	public static void main(String[] args) {
 		Scanner entrada=new Scanner(System.in);
 		Random ale=new Random();
-		int numSecreto=ale.nextInt(6);
+		int numSecreto=ale.nextInt(100);
 		int num=0;
 		int oportunidades=5;
 		while(oportunidades>0 && num!=numSecreto) {
@@ -23,7 +23,7 @@ public class Ejercicio6_Hoja6 {
             	if (num<numSecreto) {
             		System.out.println("El numero es mayor.Tienes "+oportunidades+" oportunidades");
             	}else {
-            		System.out.println("El numero es mayor.Tienes "+oportunidades+" oportunidades");
+            		System.out.println("El numero es menor.Tienes "+oportunidades+" oportunidades");
             	}
             	if(oportunidades==0) {
             		System.out.println("Ya no te queda mas intentos");

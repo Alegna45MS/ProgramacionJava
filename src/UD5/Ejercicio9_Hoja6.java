@@ -10,6 +10,7 @@ public class Ejercicio9_Hoja6 {
 
 	public static void main(String[] args) {
 		Scanner entrada=new Scanner(System.in);
+		//Crear objeto ale para crear numeros random
 		Random ale=new Random();
 		int num=0;
 		int numCant=0;
