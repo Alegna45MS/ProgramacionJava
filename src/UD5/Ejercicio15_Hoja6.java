@@ -16,7 +16,6 @@ d) Si las tres figuras son iguales se debe mostrar “Enhorabuena, ha ganado 10 
 	public static void main(String[] args) {
 		Scanner entrada=new Scanner(System.in);
 		String[] figuras= {"Corazon","Diamante","Herradura","Campana","Limon"};
-		int corazon=0,diamante=1,herradura=2,campana=3,limon=4;
 		int opcion=0;
 		do {
 			System.out.println("Pulse 1 para jugar.Pulse 2 para salir");
@@ -27,11 +26,11 @@ d) Si las tres figuras son iguales se debe mostrar “Enhorabuena, ha ganado 10 
 				System.out.print(tirada[0]+" | "+tirada[1]+" | "+tirada[2]);
 				System.out.println(" ");
 				if(tirada[0] == tirada[1] && tirada[1]==tirada[2]) {
-				System.out.println("Enhorabuena, ha ganado 10 monedas");
+					System.out.println("Enhorabuena, ha ganado 10 monedas");
 				}else if(tirada[0]==tirada[1] || tirada[1]==tirada[2] || tirada[0]==tirada[2]) {
-				System.out.println("Bien, ha recuperado su moneda");
+					System.out.println("Bien, ha recuperado su moneda");
 				}else {
-				System.out.println("Lo siento, ha perdido");
+					System.out.println("Lo siento, ha perdido");
 				}
 			}
 			
