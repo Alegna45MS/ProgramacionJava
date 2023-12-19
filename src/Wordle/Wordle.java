@@ -10,11 +10,12 @@ public class Wordle {
 	static int numLetrasAdivinadas=0;
 	public static void main(String[] args) {
 		
+		
 	}
 	public static String generaPalabra() {
 		Random ale = new Random();
-		String [] palabras = {"arroz","carne","chile","curry","mango","sushi","pasta","pizza","tarta","guiso","metal",
-		                      "rock","jazz","kpop","punk","disco","abeja","cabra","cerdo","araña"};
+		String [] palabras = {"arroz","carne","chile","curry","mango","sushi","pasta","pizza","tarta","gallo","perro",
+		                      "burro","erizo","cisne","zorro","raton","abeja","cabra","cerdo","araña"};
 		String palabraSecreta=palabras[ale.nextInt(20)];
 		return palabraSecreta;
 		}
@@ -28,7 +29,11 @@ public class Wordle {
 		}
 	}
 	public static boolean haTerminadoJuego(int numIntentosConsumidos) {
-		
+		if (numIntentosConsumidos==0) {
+			return true;
+		}else {
+			return false;
+		}
 	}
 }
 
