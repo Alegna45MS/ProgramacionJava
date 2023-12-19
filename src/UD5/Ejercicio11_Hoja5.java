@@ -13,41 +13,53 @@ Un email está bien formado cuando:
  */
 	public static void main(String[] args) {
 		Scanner entrada=new Scanner(System.in);
-		System.out.println("Escriba su email");
 		String email=entrada.nextLine();
-		System.out.println(tieneArroba(email));
-		if(tieneArroba(email)==true && esCorrectoPuntos(email)==true) {
-			System.out.println("El correo esta correcto");
+		System.out.println(emailEsCorrecto(email));
+		
+	}
+	public static boolean emailEsCorrecto(String email) {
+		if(contieneUnaArroba(email)==false) {
+			return false;
+		}if(contieneAlgunEspacio(email)==true) {
+			return false;
+		}if(contienePuntosSeguidos(email)==true) {
+			return false;
+		}else {
+			return true;
 		}
 	}
-	public static boolean tieneArroba(String email) {
-		String[] parte=email.split("@");
-		boolean tieneArroba=false;
-		int contArroba=0;
-		for(int i=0;i<email.length();i++) {
-			if(email.charAt(i)=='@' && i!=0) {
-				contArroba++;
-			}
-			if(contArroba<2 && contArroba>0) {
-				tieneArroba=true;
+	public static boolean contieneUnaArroba(String email) {
+		int posPrimeraArroba=email.indexOf('@');
+		int posUltimaArroba=email.lastIndexOf('@');
+		//no hay ninguna @
+		if(posPrimeraArroba==-1) {
+			return false;
+		}
+		//solo hay una @
+		if (posPrimeraArroba==posUltimaArroba) {
+			return true;
+		//hay mas de una arroba
+		}else {
+			return false;
 		}
 	}
-		return tieneArroba;
-	}
-	public static boolean esCorrectoPuntos(String email) {
-		boolean esCorrecto=false;
-		int contPuntos=0;
-		for(int i=0;i<email.length();i++) {
-			if(email.charAt(i)=='.' && email.charAt(i-1)=='@') {
-				contPuntos++;
-			}
-			if(email.charAt(i)=='.' && email.charAt(i-1)=='.') {
-				contPuntos++;
-			}
-			if(contPuntos<2 && contPuntos>0) {
-				esCorrecto=true;
+	public static boolean contieneAlgunEspacio(String email) {
+		//Si contiene un espacio " "
+		if(email.contains(" ")) {
+			return true;
+		}else {
+			return false;
 		}
-		}
-		return esCorrecto;
 	}
+	public static boolean contienePuntosSeguidos(String email) {
+		int posArroba=email.indexOf('@');
+		int posPuntoPrimero=email.indexOf('.');
+		int posPuntoUltimo=email.lastIndexOf('.');
+		if(posPuntoUltimo==posPuntoPrimero+1 && posArroba==posPuntoPrimero - 1) {
+			return true;
+		}else {
+			return false;
+		}
+	}
+	
 }
