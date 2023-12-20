@@ -4,12 +4,30 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class Wordle {
-	static Scanner entrada=new Scanner(System.in);
+	static Scanner in=new Scanner(System.in);
 	static String palabraSecreta=generaPalabra();
 	static int numIntentosConsumidos=6;
 	static int numLetrasAdivinadas=0;
 	public static void main(String[] args) {
-		
+		String palabra="";
+		char opcion=0;
+		boolean palabraCorrecta=false;
+		System.out.println("¿Quiere jugar al wordle?(s/n");
+		do {
+			opcion=in.nextLine().charAt(0);
+			switch(opcion) {
+			case 's':
+			case 'S':
+				menu();
+				while (palabraCorrecta==false) {
+					palabra=in.nextLine();
+					
+				}
+				
+			}
+			
+			
+		}
 		
 	}
 	public static String generaPalabra() {
@@ -34,6 +52,14 @@ public class Wordle {
 		}else {
 			return false;
 		}
+	}
+	public static void menu() {
+		System.out.println("Bienvenid@ al juego de Wordle.");
+		System.out.println("El objetivo es descubrir la palabra oculta de 5 letras");
+		System.out.println("Introduce una palabra de 5 letras:");
+	}
+	public static void comprobarPalabra() {
+		
 	}
 }
 

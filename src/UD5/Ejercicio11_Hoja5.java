@@ -14,15 +14,19 @@ Un email está bien formado cuando:
 	public static void main(String[] args) {
 		Scanner entrada=new Scanner(System.in);
 		String email=entrada.nextLine();
-		System.out.println(emailEsCorrecto(email));
+		if (emailEsCorrecto(email)==true) {
+			System.out.println("Es correcto");
+		}else {
+			System.out.println("No es correcto");
+		}
 		
 	}
 	public static boolean emailEsCorrecto(String email) {
-		if(contieneUnaArroba(email)==false) {
+		if(!contieneUnaArroba(email)) {
 			return false;
-		}if(contieneAlgunEspacio(email)==true) {
+		}if(contieneAlgunEspacio(email)) {
 			return false;
-		}if(contienePuntosSeguidos(email)==true) {
+		}if(contienePuntosSeguidos(email)) {
 			return false;
 		}else {
 			return true;
@@ -52,10 +56,9 @@ Un email está bien formado cuando:
 		}
 	}
 	public static boolean contienePuntosSeguidos(String email) {
-		int posArroba=email.indexOf('@');
-		int posPuntoPrimero=email.indexOf('.');
-		int posPuntoUltimo=email.lastIndexOf('.');
-		if(posPuntoUltimo==posPuntoPrimero+1 && posArroba==posPuntoPrimero - 1) {
+		String[] partesEmail=email.split("@");
+		boolean tieneDosPuntos=partesEmail[1].contains("..");
+		if (tieneDosPuntos==true) {
 			return true;
 		}else {
 			return false;
