@@ -14,7 +14,8 @@ public class Wordle {
 		int ganaJugador=0,ganaMaquina=0,numPartidas=0;
 		boolean palabraAdivinada=false;
 		boolean palabraCorrecta=false;
-		System.out.println("¿Quiere jugar al Wordle?(s/n");
+		System.out.println(palabraSecreta);
+		System.out.println("¿Quiere jugar al Wordle?(s/n)");
 		do {
 			opcion1=in.nextLine().charAt(0);
 			switch(opcion1) {
@@ -31,25 +32,27 @@ public class Wordle {
 						palabraCorrecta=true;
 					}
 				}
-				//compruebaLetrasAcertadas(palabra);
-					
+			}
 				if(haGanadoJugador(palabra,palabraSecreta)==true) {
 					ganaJugador++;
 					numPartidas++;
 					System.out.println("Has ganado la partida");
-					System.out.println("Tú:"+ganaJugador+"vs Máquina:"+ganaMaquina);
+					System.out.println("Tú:"+ganaJugador+" vs Máquina:"+ganaMaquina);
 					System.out.println("Total de partidas:"+numPartidas);
-					System.out.println("¿Deseas jugar otra partida?");
+					System.out.println("¿Deseas jugar otra partida?(s/n)");
+					
+					
 				}else {
 					ganaMaquina++;
 					numPartidas++;
 					System.out.println("Has perdido la partida");
-					System.out.println("Tú:"+ganaJugador+"vs Máquina:"+ganaMaquina);
+					System.out.println("Tú:"+ganaJugador+" vs Máquina:"+ganaMaquina);
 					System.out.println("Total de partidas:"+numPartidas);
-					System.out.println("¿Deseas jugar otra partida?");
+					System.out.println("¿Deseas jugar otra partida?(s/n)");
+					
 					
 				}
-				}
+				
 			break;
 			case 'n':
 			case 'N':
@@ -58,12 +61,13 @@ public class Wordle {
 			default:
 				System.out.println("Opcion no valida");
 			}
-		}while(opcion1!='n'||opcion1!='N'); {
+		}while((opcion1!='n')&& (opcion1!='N')); {
 		}
 		
 	}
 	public static String compruebaLetrasAcertadas(String palabra) {
-		return ;
+		
+		return palabra;
 		
 	}
 	public static String generaPalabra() {
@@ -100,13 +104,15 @@ public class Wordle {
 		char caracter;
 		if (palabra.length()!=5) {//Comprobar si la palabra es de longitud 5 o no
 			return false;
-		}if(palabra.contains(" ")) { //Comprobar si tiene espacios
+		}
+	    for(int i=0;i<palabra.length();i++) {//Comprobar si tiene numeros o caracteres especiales o no
+		     caracter=palabra.charAt(i);
+		     if(!Character.isLetter(caracter)) {
+		    	 return false;
+		}
+	    }
+		if(palabra.contains(" ")) { //Comprobar si tiene espacios
 			return false;
-		}for(int i=0;i<palabra.length();i++) {//Comprobar si tiene numeros o caracteres especiales o no
-			caracter=palabra.charAt(i);
-			if(caracter <= 'a' && caracter >= 'z' || (caracter <= 'A' && caracter >= 'Z')) {//ASCII
-				return false;
-			}
 		}for(int i=0;i<palabra.length();i++) { //Cuenta cuantas vocales tiene y si hay menor que 2 o mas que 3,no vale
 			caracter=palabra.charAt(i);
 			if(caracter == 'a' || caracter == 'e' || caracter == 'i' || caracter == 'o' || caracter == 'u'|| caracter == 'A' || caracter == 'E' || caracter == 'I' || caracter == 'O' || caracter == 'U') {
@@ -123,7 +129,7 @@ public class Wordle {
 		}
 		for (int i = 0; i < palabra.length(); i++) {
             caracter = palabra.charAt(i);
-            if(caracter >= 'a' && caracter <= 'z' && "aeiou".indexOf(caracter) == -1) {
+            if(Character.isLetter(caracter) && "aeiou".indexOf(caracter) == -1) {
             	contConsonantes++;
             }
             if (contConsonantes > 3) {
