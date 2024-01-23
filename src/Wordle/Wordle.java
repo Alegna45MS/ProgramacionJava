@@ -19,7 +19,7 @@ public class Wordle {
 			switch (opcion) {
 			case 's':
 			case 'S':
-				menu1();
+				menu();
 				boolean palabraCorrecta = false;
 				while (haGanadoJugador(palabra, palabraSecreta) == false
 						&& haTerminadoJuego(numIntentosConsumidos) == false) {
@@ -113,7 +113,7 @@ public class Wordle {
 		}
 	}
 
-	public static void menu1() {
+	public static void menu() {
 		System.out.println("Bienvenid@ al juego de Wordle.");
 		System.out.println("El objetivo es descubrir la palabra oculta de 5 letras");
 		System.out.println("Introduce una palabra de 5 letras:");

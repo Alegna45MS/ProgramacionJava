@@ -7,12 +7,14 @@ public class UsoCoche {
 		//Random random=new Random()
 		//Clase nombre_objeto=new Constructor(parametros)
 		Coche renault=new Coche();
-		Coche seat=new Coche();
 		//Usamos los metodos definidos en la clase
 		renault.arrancar();
 		renault.acelerar();
-		seat.arrancar();
-		
+		System.out.println("La matricula es: "+renault.dameMatricula());
+		renault.cambiaMatricula("256b");
+		System.out.println("La nueva matricula es: "+renault.dameMatricula());
+		Coche seat=new Coche("987k","verde",3);
+		System.out.println("matricula:"+seat.dameMatricula()+" ruedas:"+seat.dameRuedas());
 	}
 
 }
