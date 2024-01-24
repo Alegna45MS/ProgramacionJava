@@ -2,35 +2,35 @@ package UD6;
 
 public class Rectangulo {
 	//Definir atributos
-	private int base;
-	private int altura;
+	private double base;
+	private double altura;
 	
-	public Rectangulo(int baseIni,int alturaIni) {
-		base=baseIni;
-		altura=alturaIni;
+	public Rectangulo(double bas,double alt) { //inicializar atributos
+		base=bas;
+		altura=alt;
 	}
 	//getter:lectura
 
-	public int dameBase() {
+	public double dameBase() { //Opcional
 		return base;
 	}
-	public int dameAltura() {
+	public double dameAltura() {
 		return altura;
 	}
 	//setter:escritura
-	public void cambiarBase(int nuevaBase) {
+	/*public void cambiarBase(int nuevaBase) {
 		base=nuevaBase;
 		
 	}
 	public void cambiarAltura(int nuevaAltura) {
 		altura=nuevaAltura;
-	}
+	}*/
 	//Metodos
-	public int calcularArea() {
+	public double calcularArea() {
 		return base*altura;
 	}
-	public int calcularPerimetro() {
-		return base*2+altura*2;
+	public double calcularPerimetro() {
+		return (base*2)+(altura*2);
 	}
 }
 
