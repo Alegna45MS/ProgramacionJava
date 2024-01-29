@@ -6,9 +6,10 @@ public class PruebaCuenta {
 		Cuenta c1=new Cuenta("Carlos",2000);
 		Cuenta c2=new Cuenta("Yoli",1000);
 		System.out.println(c1.dameCuenta());
-		c1.ingresar(500);
-		System.out.println(c1.dameCuenta());
-		c1.retirar(3000);
+		System.out.println(c2.dameCuenta());
+		c2.ingresar(500);
+		System.out.println(c2.dameCuenta());
+		c1.retirar(500);
 		System.out.println(c1.dameCuenta());
 
 	}

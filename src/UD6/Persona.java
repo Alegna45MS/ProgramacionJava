@@ -26,7 +26,7 @@ public class Persona {
 		altura=0;
 		peso=0;
 	}
-	public Persona(String dni,String nom,int ed,char sex,int alt,int pes) {
+	public Persona(String dni,String nom,int ed,char sex,double alt,double pes) {
 		nombre=nom;
 		edad=ed;
 		if(sex=='M') {
@@ -37,7 +37,7 @@ public class Persona {
 		peso=pes;
 	}
 	public String damePersona() {
-		return nombre+","+DNI+","+edad+","+","+sexo+","+peso+","+altura;
+		return nombre+","+DNI+","+edad+","+sexo+","+peso+","+altura;
 	}
 	
 	//metodos
@@ -67,12 +67,31 @@ public class Persona {
 		}
 	}
 	public void generaDNI() {
-		String[]letras= {"a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"};
+		String[]letras= {"abcdefghijklmnopqrstuvwxyz"};
 		Random random=new Random();
 		for (int i=0;i<8;i++) {
 			DNI=DNI+random.nextInt(10);
 		}
-		//DNI=DNI+letras.charAt(letras.length);
+		
+		
+	}
+	public void cambiarNombre(String nuevoNombre) {
+		nombre=nuevoNombre;
+	}
+	public void cambiarAltura(double nuevaAltura) {
+		altura=nuevaAltura;
+	}
+	public void cambiarPeso(double nuevoPeso) {
+		peso=nuevoPeso;
+	}
+	public void cambiarSexo(char nuevoSexo) {
+		if(nuevoSexo!='H' && nuevoSexo!='M') {
+			sexo='H';
+		}
+		sexo=nuevoSexo;
+	}
+	public void cambiarEdad(int nuevaEdad) {
+		edad=nuevaEdad;
 	}
 	
 	
