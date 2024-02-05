@@ -41,7 +41,13 @@ public class Persona2 {
 		return null;
 	}
 	public boolean esMorosa() {
-		return true;
+		for(int i=0;i<cuentasAsociadas;i++) {
+			if(cuentas[i].dameSaldo()<0) {
+				return true;
+			}
+		}
+		return false;
 	}
+	
 	
 }
