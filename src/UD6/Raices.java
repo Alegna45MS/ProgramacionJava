@@ -10,35 +10,38 @@ public class Raices {
 	}
 	
 	public double getDiscriminante() {
-		double discr=Math.pow(b, 2)-4*a*c;
+		double discr=Math.pow(b, 2)-(4*a*c);
 		return discr;
 	}
 	public void obtenerRaices() {
 		if(tieneRaices()==true) {
-			double x1=-b+Math.sqrt(getDiscriminante())/2*a;
-			double x2=-b-Math.sqrt(getDiscriminante())/2*a;
-			System.out.println(x1);
-			System.out.println(x2);
+			double x1=(-b+Math.sqrt(getDiscriminante()))/(2*a);
+			double x2=(-b-Math.sqrt(getDiscriminante()))/(2*a);
+			System.out.println("solucion1:"+x1);
+			System.out.println("solucion 2:"+x2);
+		}else {
+			System.out.println("La ecuacion tiene una sola raiz o ninguna");
 		}
 	}
 	public void obtenerRaiz() {
 		if(tieneRaiz()==true) {
-			double x=-b+Math.sqrt(getDiscriminante())/2*a;
-			System.out.println(x);
+			System.out.println(-b/(2*a));
+		}else {
+			System.out.println("La ecuacion tiene dos raices");
 		}
 	}
 	public boolean tieneRaices() {
-		if(getDiscriminante()>=0) {
-			if()
+		if(getDiscriminante()>0) {
+			return true;
 		}
-		return true;
+		return false;
+		
 	}
 	public boolean tieneRaiz() {
-		if(getDiscriminante()>=0) {
-			
-		}
-		return true;
+		if(getDiscriminante()==0) {
+			return true;
 	}
-	
+		return false;
+	}
 }
 
