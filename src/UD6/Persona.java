@@ -8,9 +8,9 @@ public class Persona {
 	private double peso,altura;
 	private char sexo;
 	
-	public Persona(String DNI) {
+	public Persona() {
 		nombre="";
-		this.DNI=DNI;
+		//this.DNI="";
 		edad=0;
 		peso=0;
 		altura=0;
@@ -58,20 +58,25 @@ public class Persona {
 		}else {
 			return false;
 		}
+		//return (edad>=18);
 	}
-	public boolean comprobarSexo(char sexo) {
+	private boolean comprobarSexo(char sexo) {
 		if(sexo=='H' || sexo=='M') {
 			return true;
 		}else {
+			this.sexo='H';
 			return false;
 		}
 	}
-	public void generaDNI() {
+	private void generaDNI() {
 		String[]letras= {"abcdefghijklmnopqrstuvwxyz"};
 		Random random=new Random();
 		for (int i=0;i<8;i++) {
 			DNI=DNI+random.nextInt(10);
 		}
+		//int num=random.nextInt(100000000);
+		//int resto=num%23
+		//return num+""+letras.charAt(resto);
 		
 		
 	}

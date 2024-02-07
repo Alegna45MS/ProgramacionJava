@@ -8,13 +8,13 @@ public class PruebaCuenta2 {
 		
 		Cuenta2 c1=p1.dameCuenta("c1");
 		c1.recibirAbono(100);
-		Cuenta
-		p1.dameCuenta("c1").pagarRecibo(200);
+		//Cuenta
+		//p1.dameCuenta("c1").pagarRecibo(200);
 		
-		if(p1.esMorosa()) {
-			System.out.println("Es morosa");
-		}else {
-			System.out.println("No es morosa");
+		//if(p1.esMorosa()) {
+			//System.out.println("Es morosa");
+		//}else {
+			//System.out.println("No es morosa");
 		}
 		/*System.out.println(c1.toString());
 		c2.recibirAbono(700);
@@ -36,4 +36,4 @@ public class PruebaCuenta2 {
 
 	}
 
-}
+
