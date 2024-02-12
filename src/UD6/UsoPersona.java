@@ -18,9 +18,9 @@ public class UsoPersona {
 		double peso=in.nextDouble();
 		in.nextLine();
 		String dni=in.nextLine();
-		Persona persona1=new Persona(dni,nombre,edad,sexo,altura,peso);
-		Persona persona2=new Persona(dni,nombre,edad,sexo);
-		Persona persona3=new Persona(dni,nombre,edad,sexo,altura,peso);
+		Persona1 persona1=new Persona1(dni,nombre,edad,sexo,altura,peso);
+		Persona1 persona2=new Persona1(dni,nombre,edad,sexo);
+		Persona1 persona3=new Persona1(dni,nombre,edad,sexo,altura,peso);
 		persona3.cambiarNombre("maria");
 		persona3.cambiarEdad(10);
 		persona3.cambiarSexo('M');
