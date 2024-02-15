@@ -1,6 +1,7 @@
 package UD6;
 
 public class Fraccion {
+
 	private int numerador,denominador;
 	
 	public Fraccion(int num,int den) {
