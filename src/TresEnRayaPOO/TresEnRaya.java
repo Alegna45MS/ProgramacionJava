@@ -52,7 +52,46 @@ public class TresEnRaya {
 		}
 	}
 	public boolean movimientoValido(int pos) {
-		return (pos > 0 && pos <= 9);
+		if(pos>=1 && pos<=9) {
+			if(pos==1) {
+				if(casillas[0][0]==0) {
+					return true;
+				}
+			}else if(pos==2) {
+				if(casillas[0][1]==0) {
+					return true;
+				}
+			}else if(pos==3) {
+				if(casillas[0][2]==0) {
+					return true;
+				}
+			}else if(pos==4) {
+				if(casillas[1][0]==0) {
+					return true;
+				}
+			}else if(pos==5) {
+				if(casillas[1][1]==0) {
+					return true;
+				}
+			}else if(pos==6) {
+				if(casillas[1][2]==0) {
+					return true;
+				}
+			}else if(pos==7) {
+				if(casillas[2][0]==0) {
+					return true;
+				}
+			}else if(pos==8) {
+				if(casillas[2][1]==0){
+					return true;
+				}
+			}else{
+				if(casillas[2][2]==0) {
+					return true;
+				};
+			}
+		}
+		return false;
 	}
 	public void mueveOrdenador1() {
 		boolean valido=false;
@@ -85,16 +124,16 @@ public class TresEnRaya {
 	}
 	public void iniciar() {
 		for(int i=0;i<3;i++) {
-			for (int j=0;j<3;i++) {
+			for (int j=0;j<3;j++) {
 				casillas[i][j]=0;
 			}
 	}
   }
-	public boolean guedanMovimientos() {
+	public boolean quedanMovimientos() {
 		for(int i=0;i<3;i++) {
-			for(int j=0;j<3;i++) {
-			if (casillas[i][j]!=1 && casillas[i][j]!=2) {
-				return false; //Todavia hay casillas libres
+			for(int j=0;j<3;j++) {
+				if (casillas[i][j]==0 ) {
+					return false; //Todavia hay casillas libres
 			}
 			}
 		}
