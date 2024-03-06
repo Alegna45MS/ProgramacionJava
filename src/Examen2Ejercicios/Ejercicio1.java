@@ -53,7 +53,7 @@ public class Ejercicio1 {
 				mesNom=meses[i];
 			}
 		}
-		return dia+" de "+mesNom+" de "+año;
+		return dia+" dede "+año;
 		
 	}
 

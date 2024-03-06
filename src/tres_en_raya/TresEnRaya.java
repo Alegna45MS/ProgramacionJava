@@ -1,4 +1,4 @@
-package TresEnRayaPOO;
+package tres_en_raya;
 
 import java.util.Random;
 

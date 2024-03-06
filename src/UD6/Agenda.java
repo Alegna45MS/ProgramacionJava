@@ -40,16 +40,10 @@ public class Agenda {
 		}
 	}
 	public void buscarContacto(String nombre) {
-		boolean encontrado=false;
-		while(encontrado==false) {
 		for(int i=0;i<cantidad;i++) {
 			if(contactos[i].getNombre().equals(nombre)==true) {
 				System.out.println("Telefono: "+contactos[i].getTlf());
 			}
 		}
-		}
 	}
-	
-	
-	
 }
