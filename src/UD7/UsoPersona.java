@@ -9,7 +9,7 @@ public class UsoPersona {
 		Scanner in=new Scanner(System.in);
 		int TAM=10;
 		Persona[] lista=new Persona[TAM];
-		int opcion=0,opcion2=0;
+		int opcion=0,opcion2=0; ////aaaaaa
 		do {
 			System.out.println("1.Añadir persona");
 			System.out.println("2.Mostrar personas");
