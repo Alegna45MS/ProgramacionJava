@@ -17,7 +17,7 @@ public class Estudiante extends Persona{
 	}
 
 	public String toString() {
-		return super.toString()+"curso=" + curso;
+		return super.toString()+"curso=" + getCurso();
 	}
 	
 }

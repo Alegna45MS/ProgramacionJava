@@ -10,86 +10,22 @@ public class TresEnRaya {
 		casillas=new int[3][3];
 	}
 	public void mueveJugador1(int pos) {
-		if(pos==1) {
-			casillas[0][0]=1;
-		}else if(pos==2) {
-			casillas[0][1]=1;
-		}else if(pos==3) {
-			casillas[0][2]=1;
-		}else if(pos==4) {
-			casillas[1][0]=1;
-		}else if(pos==5) {
-			casillas[1][1]=1;
-		}else if(pos==6) {
-			casillas[1][2]=1;
-		}else if(pos==7) {
-			casillas[2][0]=1;
-		}else if(pos==8) {
-			casillas[2][1]=1;
-		}else{
-			casillas[2][2]=1;
-		}
+		int fila = (pos - 1) / 3;
+        int columna = (pos - 1) % 3;
+        casillas[fila][columna] = 1;
 	}
 	public void mueveJugador2(int pos) { 
-		if(pos==1) {
-			casillas[0][0]=2;
-		}else if(pos==2) {
-			casillas[0][1]=2;
-		}else if(pos==3) {
-			casillas[0][2]=2;
-		}else if(pos==4) {
-			casillas[1][0]=2;
-		}else if(pos==5) {
-			casillas[1][1]=2;
-		}else if(pos==6) {
-			casillas[1][2]=2;
-		}else if(pos==7) {
-			casillas[2][0]=2;
-		}else if(pos==8) {
-			casillas[2][1]=2;
-		}else{
-			casillas[2][2]=2;
-		}
+		int fila = (pos - 1) / 3;
+        int columna = (pos - 1) % 3;
+        casillas[fila][columna] = 2;
 	}
 	public boolean movimientoValido(int pos) {
 		if(pos>=1 && pos<=9) {
-			if(pos==1) {
-				if(casillas[0][0]==0) {
-					return true;
-				}
-			}else if(pos==2) {
-				if(casillas[0][1]==0) {
-					return true;
-				}
-			}else if(pos==3) {
-				if(casillas[0][2]==0) {
-					return true;
-				}
-			}else if(pos==4) {
-				if(casillas[1][0]==0) {
-					return true;
-				}
-			}else if(pos==5) {
-				if(casillas[1][1]==0) {
-					return true;
-				}
-			}else if(pos==6) {
-				if(casillas[1][2]==0) {
-					return true;
-				}
-			}else if(pos==7) {
-				if(casillas[2][0]==0) {
-					return true;
-				}
-			}else if(pos==8) {
-				if(casillas[2][1]==0){
-					return true;
-				}
-			}else{
-				if(casillas[2][2]==0) {
-					return true;
-				};
-			}
+			int fila = (pos - 1) / 3;
+	        int columna = (pos - 1) % 3;
+	        if(casillas[fila][columna]==0) {
+	        	return true;
+	        }
 		}
 		return false;
 	}
@@ -152,13 +88,24 @@ public class TresEnRaya {
 		return false;
 	}
 	public void DibujarTablero() {
-		System.out.println("-------------");
-		System.out.println("| "+casillas[0][0]+" | "+casillas[0][1]+" | "+casillas[0][2]+" | ");
-		System.out.println("-------------");
-		System.out.println("| "+casillas[1][0]+" | "+casillas[1][1]+" | "+casillas[1][2]+" | ");
-		System.out.println("-------------");
-		System.out.println("| "+casillas[2][0]+" | "+casillas[2][1]+" | "+casillas[2][2]+" | ");
-		System.out.println("-------------");
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                if (casillas[i][j] == 0) {
+                    System.out.print("   ");
+                } else if (casillas[i][j] == 1) {
+                    System.out.print(" X ");
+                } else {
+                    System.out.print(" O ");
+                }
+                if (j < 2) {
+                    System.out.print("|");
+                }
+            }
+            System.out.println();
+            if (i < 2) {
+                System.out.println("---+---+---");
+            }
+        }
 	}
 	public boolean verificarFilas(int icono) {
 		boolean ganar=false;
@@ -191,12 +138,4 @@ public class TresEnRaya {
 		}
 		return ganar;
 	}
-	public boolean esEmpate() {
-			if (ganaJugador1()==true || ganaJugador2()==true) {
-				return false; //Uno de los dos ganó,no hay empate
-			}
-		return true;
-		
-	}
-	
 }

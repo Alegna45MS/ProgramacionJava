@@ -4,7 +4,7 @@ public class Cuenta {
 	private String titular;
 	private double cantidad;
 	
-	public Cuenta(String tit,int cant) {
+	public Cuenta(String tit,double cant) {
 		titular=tit;
 		cantidad=cant;
 	}

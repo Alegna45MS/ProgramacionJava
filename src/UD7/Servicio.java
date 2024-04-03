@@ -17,7 +17,7 @@ public class Servicio extends Empleado {
 	}
 
 	public String toString() {
-		return super.toString()+"seccion=" + seccion;
+		return super.toString()+"seccion=" + getSeccion();
 	}
 	
 }

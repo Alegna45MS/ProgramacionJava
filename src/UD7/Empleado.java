@@ -26,7 +26,7 @@ public class Empleado extends Persona {
 		this.numDespacho = numDespacho;
 	}
 	public String toString() {
-		return super.toString()+"fIncorporacion=" + fIncorporacion + ", numDespacho=" + numDespacho;
+		return super.toString()+"fIncorporacion=" + getfIncorporacion()+ ", numDespacho=" + getNumDespacho();
 	}
 	
 

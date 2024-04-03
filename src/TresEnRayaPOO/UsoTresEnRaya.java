@@ -36,13 +36,11 @@ public class UsoTresEnRaya {
 	public static void jugadorVSjugador() {
 		int pos1,pos2;
 		TresEnRaya tablero=new TresEnRaya();
-		System.out.println("-------------");
-		System.out.println("| 1 | 2 | 3 |");
-		System.out.println("-------------");
-		System.out.println("| 4 | 5 | 6 |");
-		System.out.println("-------------");
-		System.out.println("| 7 | 8 | 9 |");
-		System.out.println("-------------");
+		System.out.println(" 1 | 2 | 3 ");
+		System.out.println("---+---+---");
+		System.out.println(" 4 | 5 | 6 ");
+		System.out.println("---+---+---");
+		System.out.println(" 7 | 8 | 9 ");
 		tablero.iniciar();
 		while(tablero.ganaJugador1()==false && tablero.ganaJugador2()==false && tablero.quedanMovimientos()==false) {
 			System.out.println("Introduzca movimiento (Jugador 1)");
@@ -77,17 +75,13 @@ public class UsoTresEnRaya {
 	}
 	public static void jugadorVSmaquina() {
 		int pos1;
-		int turno=random.nextInt(2)+1;
 		TresEnRaya tablero=new TresEnRaya();
-		System.out.println("-------------");
-		System.out.println("| 1 | 2 | 3 |");
-		System.out.println("-------------");
-		System.out.println("| 4 | 5 | 6 |");
-		System.out.println("-------------");
-		System.out.println("| 7 | 8 | 9 |");
-		System.out.println("-------------");
+		System.out.println(" 1 | 2 | 3 ");
+		System.out.println("---+---+---");
+		System.out.println(" 4 | 5 | 6 ");
+		System.out.println("---+---+---");
+		System.out.println(" 7 | 8 | 9 ");
 		tablero.iniciar();
-		if(turno==1) {
 		while(tablero.ganaJugador1()==false && tablero.ganaJugador2()==false && tablero.quedanMovimientos()==false) {
 			System.out.println("Introduzca movimiento (Jugador 1)");
 			pos1=in.nextInt();
@@ -105,25 +99,6 @@ public class UsoTresEnRaya {
 				}
 			}
 		}
-		}if(turno==2) {
-			while(tablero.ganaJugador1()==false && tablero.ganaJugador2()==false && tablero.quedanMovimientos()==false) {
-				System.out.println("Turno de ordenador 2");
-				tablero.mueveOrdenador2();
-				tablero.DibujarTablero();
-				if(tablero.quedanMovimientos()==false) {
-					if(tablero.ganaJugador2()==false) {
-						System.out.println("Introduzca movimiento (Jugador 1)");
-						pos1=in.nextInt();
-						while(tablero.movimientoValido(pos1)==false) {
-							System.out.println("Movimiento no valido.Vuelve a ponerlo");
-							pos1=in.nextInt();
-						}
-						tablero.mueveJugador1(pos1);
-						tablero.DibujarTablero();
-					}
-				}
-			}
-		}
 		if(tablero.ganaJugador1()) {
 			System.out.println("Ha ganado,Jugador 1");
 		}else if(tablero.ganaJugador2()) {
@@ -135,13 +110,11 @@ public class UsoTresEnRaya {
 	}
 	public static void maquinaVSmaquina() {
 		TresEnRaya tablero=new TresEnRaya();
-		System.out.println("-------------");
-		System.out.println("| 1 | 2 | 3 |");
-		System.out.println("-------------");
-		System.out.println("| 4 | 5 | 6 |");
-		System.out.println("-------------");
-		System.out.println("| 7 | 8 | 9 |");
-		System.out.println("-------------");
+		System.out.println(" 1 | 2 | 3 ");
+		System.out.println("---+---+---");
+		System.out.println(" 4 | 5 | 6 ");
+		System.out.println("---+---+---");
+		System.out.println(" 7 | 8 | 9 ");
 		tablero.iniciar();
 		while(tablero.ganaJugador1()==false && tablero.ganaJugador2()==false && tablero.quedanMovimientos()==false) {
 			System.out.println("Turno de ordenador 1");

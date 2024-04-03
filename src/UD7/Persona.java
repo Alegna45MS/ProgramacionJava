@@ -46,7 +46,7 @@ public class Persona {
 	}
 
 	public String toString() {
-		return "Nombre=" + nombre + ", Apellido=" + apellido + ", DNI=" + DNI + ", Estado Civil=" + EstCivil;
+		return "Nombre=" + getNombre() + ", Apellido=" + getApellido() + ", DNI=" + getDNI() + ", Estado Civil=" + getEstCivil();
 	}
 	
 }
