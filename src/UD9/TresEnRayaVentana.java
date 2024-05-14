@@ -102,8 +102,5 @@ public class TresEnRayaVentana extends JFrame implements ActionListener {
 		etiquetaResultado.setText("Se esta jugando");
 		esTurnoJugador1 = true;
 	}
-	public boolean casillaVacia(int pos) {
-		
-	}
 }
 
