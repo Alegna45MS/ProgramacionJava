@@ -13,7 +13,6 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-import UD9.Ventana2;
 
 public class InicioSesion extends JFrame implements ActionListener {
 	private static Connection miConexion;
@@ -69,20 +68,27 @@ public class InicioSesion extends JFrame implements ActionListener {
 		String contraseña=JTContraseña.getText();
 		String consulta="Select usuario,contraseña from Jugador where usuario='"+usuario+"';";
 		try {
-			miConexion = DriverManager.getConnection("jdbc:mysql://localhost:3306/Traductor", "user","password");
+			miConexion = DriverManager.getConnection("jdbc:mysql://localhost:3306/TresEnRaya", "user","password");
 			miStatement = miConexion.createStatement();
 			ResultSet miResultset=miStatement.executeQuery(consulta);
 			while(miResultset.next()) {
-				/*if(miResultset.getString("contraseña").equals(contraseña)) {
+				if(miResultset.getString("contraseña").equals(contraseña)) {
 					return true;
-				}*/
-				System.out.println(consulta);
+				}else {
+					return false;
+				}
 			}
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 		}
 		return false;
 
+	}
+	public String getUsuario() {
+		return JTUsuario.getText();
+	}
+	public String getContraseña() {
+		return JTContraseña.getText();
 	}
 
 }

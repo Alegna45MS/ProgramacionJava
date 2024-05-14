@@ -7,10 +7,11 @@ public class prueba {
 		Menu menu = new Menu();
 		Estadisticas estats = new Estadisticas();
 		
-		inicio.setMenu(menu);
 		menu.setInicio(inicio);
 		menu.setEstadisticas(estats);
+		inicio.setMenu(menu);
 		estats.setMenu(menu);
+		
 	}
 
 }
